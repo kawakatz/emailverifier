@@ -11,7 +11,7 @@ import (
 	"time"
 )
 
-func verifyemail(email string) bool {
+func verifyEmail(email string) bool {
 	sp := strings.Split(email, "@")
 	//local_part := sp[0]
 	domain_part := sp[1]
@@ -35,7 +35,7 @@ func main() {
 	scanner := bufio.NewScanner(os.Stdin)
 	for scanner.Scan() {
 		email := scanner.Text()
-		result := verifyemail(email)
+		result := verifyEmail(email)
 
 		if result == true {
 			fmt.Println("\x1b[32m[+] " + email + " is valid.\x1b[0m")
