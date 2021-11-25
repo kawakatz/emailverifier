@@ -2,13 +2,13 @@ package main
 
 import (
 	"bufio"
-	"os"
+	"flag"
 	"fmt"
 	"net"
 	"net/smtp"
+	"os"
 	"strings"
 	"time"
-	"flag"
 )
 
 func verifyemail(email string) bool {
@@ -38,9 +38,9 @@ func main() {
 		result := verifyemail(email)
 
 		if result == true {
-			fmt.Println("\x1b[32m[+] " + email +" is valid.\x1b[0m")
+			fmt.Println("\x1b[32m[+] " + email + " is valid.\x1b[0m")
 		} else {
-			fmt.Println("\x1b[31m[-] " + email +" is not valid.\x1b[0m")
+			fmt.Println("\x1b[31m[-] " + email + " is not valid.\x1b[0m")
 		}
 
 		time.Sleep(time.Second * time.Duration(sleep))
